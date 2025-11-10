@@ -17,8 +17,7 @@ Files
 - `assets/styles.css` — small custom styles (toast, QR scaling)
 - `assets/script.js` — JS interactions (copy, toast, QR gen)
 
-Assumptions
-- The shop website used for the QR is set to https://greaterandbiggerventures.com in `assets/script.js`. Update the `shopUrl` constant if you have a different landing URL.
+
 
 How to run
 1. Open `index.html` in a browser (double-click or serve via a local static server).
