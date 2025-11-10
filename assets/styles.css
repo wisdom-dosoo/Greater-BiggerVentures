@@ -19,8 +19,13 @@ header:hover img {
 }
 
 /* Toast visible state toggled via JS by adding/removing .show */
-#toast.show{
-  opacity:1 !important;
+#toast {
+  visibility: hidden;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1 !important;
   transform: translateY(0) !important;
 }
 

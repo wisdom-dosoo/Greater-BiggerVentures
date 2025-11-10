@@ -13,10 +13,20 @@
   let toastTimer = null;
 
   function showToast(message) {
+    if (!toast || !toastMessage) return; // Guard against missing elements
+    
+    // Set the message
     toastMessage.textContent = message;
+    
+    // Show the toast
     toast.classList.add('show');
-    // clear previous timer
-    if (toastTimer) clearTimeout(toastTimer);
+    
+    // Clear any existing timer
+    if (toastTimer) {
+      clearTimeout(toastTimer);
+    }
+    
+    // Set new timer to hide toast after 3 seconds
     toastTimer = setTimeout(() => {
       toast.classList.remove('show');
       toastTimer = null;
@@ -26,7 +36,7 @@
   async function copyMoMo() {
     try {
       await navigator.clipboard.writeText(momoNumber);
-      showToast(`MoMo Number:${momoNumber} copied successfully!`);
+      showToast(`MoMo Number: ${momoNumber} has been copied to clipboard!`);
     } catch (err) {
       // Fallback for older browsers
       const textarea = document.createElement('textarea');
@@ -35,7 +45,7 @@
       textarea.select();
       try {
         document.execCommand('copy');
-        showToast(`MoMo Number:${momoNumber} copied successfully!`);
+        showToast(`MoMo Number: ${momoNumber} has been copied to clipboard!`);
       } catch (e) {
         showToast('Unable to copy. Please copy manually.');
       }
