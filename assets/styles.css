@@ -1,0 +1,40 @@
+/* Custom styles for GREATER & BIGGER VENTURES site */
+:root{
+  --brand-green:#0f5132;
+  --brand-gold:#d4af37;
+}
+
+/* Header styles with background image */
+header {
+  position: relative;
+  background-color: var(--brand-green);
+}
+
+header img {
+  transition: transform 20s ease-in-out;
+}
+
+header:hover img {
+  transform: scale(1.1);
+}
+
+/* Toast visible state toggled via JS by adding/removing .show */
+#toast.show{
+  opacity:1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Make sure the QR container scales nicely */
+#qrcode canvas, #qrcode img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain;
+}
+
+/* Small utility for the logo text color */
+.logo-accent{ color: var(--brand-gold); }
+
+/* Responsive tweaks */
+@media (max-width:640px){
+  header h1{ font-size:1.25rem; }
+}
